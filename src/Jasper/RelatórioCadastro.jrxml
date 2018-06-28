@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatórioCadastro" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13acf49e-4913-4d1b-bccc-113817ad15d1">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[ZmlsbWVzLmNsaWVudGVzIEFTICwyMywtMiw3NzhhMDlkZS1lYWEwLTQ4ODItOTE2ZS1kY2MzNTRl
+YzI3ZjE7]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (3)"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT filmes.clientes.`Assiste`,
+	filmes.clientes.`Nome`,
+	filmes.clientes.`Codfilme`
+FROM filmes.clientes]]>
+	</queryString>
+	<field name="Assiste" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Assiste"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clientes"/>
+	</field>
+	<field name="Nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clientes"/>
+	</field>
+	<field name="Codfilme" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Codfilme"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clientes"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{Assiste}]]></groupExpression>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{Nome}]]></groupExpression>
+		<groupHeader>
+			<band height="170">
+				<staticText>
+					<reportElement x="10" y="0" width="100" height="30" uuid="54c292fd-a734-4b38-bc2a-92a678d8f3e5"/>
+					<textElement>
+						<font fontName="arial" size="18"/>
+					</textElement>
+					<text><![CDATA[Código:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="80" y="0" width="335" height="26" uuid="e2189c2c-0071-4671-9769-d5e462673420"/>
+					<textElement>
+						<font size="16"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Codfilme}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="140" y="108" width="335" height="26" forecolor="#000000" uuid="539b4cf8-ac6d-4bf8-ae91-63f3d4149f2d"/>
+					<textElement>
+						<font fontName="SansSerif" size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Nome}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="45" width="120" height="30" uuid="c7988ab6-c58e-4112-bb12-68ef540d68c1"/>
+					<textElement>
+						<font fontName="arial" size="18"/>
+					</textElement>
+					<text><![CDATA[Onde Assiste:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="120" y="45" width="335" height="26" uuid="54589841-95c8-4e8a-9f0d-83e8437a6318"/>
+					<textElement>
+						<font size="16"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Assiste}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="108" width="150" height="30" uuid="8faea2d2-7c03-44b1-9999-1597e12eee57"/>
+					<textElement>
+						<font fontName="arial" size="18"/>
+					</textElement>
+					<text><![CDATA[Nome do Filme:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="3" y="162" width="541" height="1" uuid="e336dfdf-9c51-4c08-88d7-bb282e640c56"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Codfilme">
+		<groupExpression><![CDATA[$F{Codfilme}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="129" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="6c6ca4e1-17cd-4913-93d6-5e670ea9ae8a"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="a2a2cac8-5a7d-4487-8c54-dab235ce4e21"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Relatório]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="8978eac3-c578-41c9-837e-48d2b0184642"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cadastro de Filmes]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="51" splitType="Stretch"/>
+	</columnHeader>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
